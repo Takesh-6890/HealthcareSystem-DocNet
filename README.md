@@ -135,7 +135,7 @@ Feel free to fork, raise issues, or connect.
 ## 📬 Contact
 
 * GitHub: https://github.com/Takesh-6890
-* LinkedIn: (add your link)
+* LinkedIn: https://www.linkedin.com/in/takeshwar-jangita-815888303/
 
 ---
 
