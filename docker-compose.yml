@@ -1,0 +1,19 @@
+services:
+  db:
+  imaage:postgres:latest
+  eviroment:
+  POSTGRES_DB:healthcare
+  POSTGRES_USER:postgres
+  POSTGRES_PASSWORD:dev123
+  ports:
+  - "5432:5432"
+  volimes:
+  -pddata:/var/lib/postgresql/data
+  fhir:
+  image:hapifhir/hapi:latest
+  ports:
+  - "8080:8080"
+  eviroment:
+  hapi.fhir.fhir_version:R4
+  volumes:
+  pddata:
