@@ -1,0 +1,73 @@
+{
+  "hash": "01ccd48c",
+  "configHash": "c9743fc3",
+  "lockfileHash": "829d6ddd",
+  "browserHash": "e42403af",
+  "optimized": {
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "088c6605",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "61c9c0ea",
+      "needsInterop": false
+    },
+    "@angular/platform-server/init": {
+      "src": "../../../../../../node_modules/@angular/platform-server/fesm2022/init.mjs",
+      "file": "@angular_platform-server_init.js",
+      "fileHash": "8f3edbe4",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "afccc7c1",
+      "needsInterop": false
+    },
+    "@angular/ssr": {
+      "src": "../../../../../../node_modules/@angular/ssr/fesm2022/ssr.mjs",
+      "file": "@angular_ssr.js",
+      "fileHash": "dcc4a671",
+      "needsInterop": false
+    },
+    "@angular/ssr/node": {
+      "src": "../../../../../../node_modules/@angular/ssr/fesm2022/node.mjs",
+      "file": "@angular_ssr_node.js",
+      "fileHash": "18c9b09e",
+      "needsInterop": false
+    },
+    "express": {
+      "src": "../../../../../../node_modules/express/index.js",
+      "file": "express.js",
+      "fileHash": "8ce443ee",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-RVBTMIJS": {
+      "file": "chunk-RVBTMIJS.js"
+    },
+    "chunk-E22PKRBY": {
+      "file": "chunk-E22PKRBY.js"
+    },
+    "chunk-6HILSCWF": {
+      "file": "chunk-6HILSCWF.js"
+    },
+    "chunk-IDRX5QYT": {
+      "file": "chunk-IDRX5QYT.js"
+    },
+    "chunk-3LSSO3LO": {
+      "file": "chunk-3LSSO3LO.js"
+    },
+    "xhr2-IDP3NJFJ": {
+      "file": "xhr2-IDP3NJFJ.js"
+    },
+    "chunk-6DU2HRTW": {
+      "file": "chunk-6DU2HRTW.js"
+    }
+  }
+}
