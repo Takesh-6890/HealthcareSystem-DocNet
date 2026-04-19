@@ -1,10 +1,10 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   index
-} from "./chunk-3LSSO3LO.js";
+} from "./chunk-GW33J3YH.js";
 import "./chunk-6DU2HRTW.js";
 
-// ../../node_modules/@angular/platform-server/fesm2022/init.mjs
+// node_modules/@angular/platform-server/fesm2022/init.mjs
 function applyShims() {
   Object.assign(globalThis, index.impl);
   globalThis["KeyboardEvent"] = index.impl.Event;

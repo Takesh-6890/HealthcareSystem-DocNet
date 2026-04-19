@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from '../../../core/services/api.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -91,17 +91,19 @@ export class PatientRecordsComponent implements OnInit {
   loading = true;
   rxLoading = false;
 
-  rxForm = this.fb.group({
-    medication: ['', Validators.required],
-    dosage:     ['', Validators.required]
-  });
+  rxForm!: FormGroup;
 
   constructor(
     private route: ActivatedRoute,
     private api: ApiService,
     private fb: FormBuilder,
     private snack: MatSnackBar
-  ) {}
+  ) {
+    this.rxForm = this.fb.group({
+      medication: ['', Validators.required],
+      dosage:     ['', Validators.required]
+    });
+  }
 
   ngOnInit() {
     this.fhirId = this.route.snapshot.paramMap.get('fhirId')!;

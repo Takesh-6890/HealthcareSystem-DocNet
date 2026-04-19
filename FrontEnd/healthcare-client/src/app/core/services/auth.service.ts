@@ -10,7 +10,9 @@ export interface RegisterPayload { email: string; password: string; role: string
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private loggedIn = new BehaviorSubject<boolean>(!!localStorage.getItem('token'));
+  private loggedIn = new BehaviorSubject<boolean>(typeof window !== 'undefined'
+    ? !!localStorage.getItem('token')
+    : false);
   isLoggedIn$ = this.loggedIn.asObservable();
 
   constructor(private http: HttpClient, private router: Router) {}

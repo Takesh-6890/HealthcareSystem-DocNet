@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../core/services/auth.service';
@@ -85,18 +85,20 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   `]
 })
 export class RegisterComponent {
-  form = this.fb.group({
-    firstName:      ['', Validators.required],
-    lastName:       ['', Validators.required],
-    email:          ['', [Validators.required, Validators.email]],
-    password:       ['', [Validators.required, Validators.minLength(8)]],
-    role:           ['Patient', Validators.required],
-    specialization: [''],
-    phone:          ['']
-  });
+  form!: FormGroup;
   error = ''; loading = false;
 
-  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {}
+  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {
+    this.form = this.fb.group({
+      firstName:      ['', Validators.required],
+      lastName:       ['', Validators.required],
+      email:          ['', [Validators.required, Validators.email]],
+      password:       ['', [Validators.required, Validators.minLength(8)]],
+      role:           ['Patient', Validators.required],
+      specialization: [''],
+      phone:          ['']
+    });
+  }
 
   submit() {
     if (this.form.invalid) return;

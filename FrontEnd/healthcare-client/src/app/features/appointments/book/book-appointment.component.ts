@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { AppointmentService, TimeSlot } from '../../../core/services/appointment.service';
@@ -112,12 +112,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
   `]
 })
 export class BookAppointmentComponent implements OnInit {
-  form = this.fb.group({
-    doctorId:  ['', Validators.required],
-    date:      ['', Validators.required],
-    slotStart: ['', Validators.required],
-    reason:    ['', [Validators.required, Validators.maxLength(500)]]
-  });
+  form!: FormGroup;
 
   doctors: Doctor[] = [];
   slots: TimeSlot[] = [];
@@ -133,7 +128,14 @@ export class BookAppointmentComponent implements OnInit {
     private auth: AuthService,
     private snack: MatSnackBar,
     public router: Router
-  ) {}
+  ) {
+    this.form = this.fb.group({
+      doctorId:  ['', Validators.required],
+      date:      ['', Validators.required],
+      slotStart: ['', Validators.required],
+      reason:    ['', [Validators.required, Validators.maxLength(500)]]
+    });
+  }
 
   ngOnInit() {
     this.doctorSvc.getAll().subscribe(docs => this.doctors = docs);
